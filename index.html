@@ -16,24 +16,31 @@
 
     <script>
         $(document).ready(function () {
-
-            $('li').each(function () {
-                if ($(this).text() == 'England')
-                    $(this).css('color', 'red');
-            })
-
-            // $('li').each(function (index, element) {
-            //     $('divResult').html($('#divResult').html() + "<br>" + $(this).text());
-            // })
+            var employeeJson = [
+                {
+                    'firstName': 'Hang',
+                    'lastName': 'Ngo',
+                    'email': 'hangnt036@gmail'
+                },
+                {
+                    'firstName': 'Bap',
+                    'lastName': 'Ngo',
+                    'email': 'hangnt@gmail'
+                }
+            ];
 
             // var result = '';
-            // $('li').each(function (index, element) {
-            //     result += $(this).text() + "<br>"
-            // })
+            // $.each($(employeeJson), function (i, item) {
+            //     result += 'FirstName: ' + item.firstName + '. Lastname: ' + item.lastName + '<br/>';
+            // });
             // $('#divResult').html(result);
 
-            //method chaining
-            // $('li').css('color', 'while').slideUp(1000).slideDown(1000).attr('title', 'ok');
+            $('#divResult').html(JSON.stringify(employeeJson));
+
+            //chuyen doi string va doi tuong Json
+            var content = $('#divResult').html();
+            var objectJson = JSON.parse(content);
+            console.log('111111111', objectJson);
         })
     </script>
 
@@ -42,15 +49,6 @@
 <body>
     <div class="wrapp-content">
         <div class="container-home">
-            <ul>
-                <li>VietNam</li>
-                <li>ThaiLan</li>
-                <li>England</li>
-                <li>China</li>
-                <li>Russia</li>
-            </ul>
-            <br />
-            <br />
             <div id="divResult"></div>
         </div>
     </div>
