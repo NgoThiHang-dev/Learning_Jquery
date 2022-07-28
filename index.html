@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/style.css" rel="stylesheet">
+
+
+    <style>
+        .hn-border {
+            border: 1px solid #ffb6b6;
+        }
+
+        .color-red {
+            color: red;
+        }
+
+        .bg-yellow {
+            background-color: #ffb;
+        }
+    </style>
+
+    <!-- <script type="text/javascript" src="js/jquery-3.6.0.min.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+        integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+        </script>
+    <script>
+        window.jQuery || document.write("<script src='js\/jquery-3.6.0.min.js'>")
+    </script>
+
+    <script>
+        // $(document).ready(function () {
+        //     alert('Document Object')
+        // });
+
+        // $(window).on('load', function () {
+        //     alert('Window load')
+        // });
+
+        // $(document).ready(function () {
+        //     $('#btn_Click').click(function () {
+        //         alert('Click event!');
+        //     })
+        // })
+
+        // $(document).ready(function () {
+        //     var button = $('#btn_Click');
+        //     button.click(function () {
+        //         button.css('background-color', '#ffb');
+        //         button.css('border', 'none');
+        //     });
+        // })
+
+        // $(document).ready(function () {
+        //     $('table tr:even').each(function () {
+        //         alert($(this).html())
+        //     })
+        // })
+
+        // $(document).ready(function () {
+        //     $('[title]').addClass('hn-border')
+        //     $('[title="title2"]').addClass('bg-yellow')
+        //     $('span[title]').addClass('color-red')
+        //     alert($('.demo[title="title1"]').data('id'));
+        // })
+
+
+        // set - get giá trị thuộc tính của Element
+        $(document).ready(function () {
+            $('#btn1').click(function () {
+                $('#lblText').text('Click here');
+            })
+        })
+        $(document).ready(function () {
+            $('#btn2').click(function () {
+                alert($('#lblText').text('Click here'));
+            })
+        })
+        $(document).ready(function () {
+            $('#btn3').click(function () {
+                $('#lblText').attr('style', 'color: red');
+                $('#txt1').val('123');
+                $('#lblText').text($('#txt1').val());
+            })
+        })
+
+        $(document).ready(function () {
+            $('#hn-click-link').click(function () {
+                $('#link-click').attr('href', 'https://google.com');
+            })
+        })
+
+    </script>
+</head>
+
+<body>
+    <!-- <button id="btn_Click">Click here</button>
+    <div>
+        <table id="hn-table" border="1">
+            <tr>
+                <th>Company</th>
+                <th>Contact</th>
+                <th>Country</th>
+            </tr>
+            <tr>
+                <td>Alfreds Futterkiste</td>
+                <td>Maria Anders</td>
+                <td>Germany</td>
+            </tr>
+            <tr>
+                <td>Centro comercial Moctezuma</td>
+                <td>Francisco Chang</td>
+                <td>Mexico</td>
+            </tr>
+        </table>
+    </div> -->
+
+    <!-- <div class="demo" title="title1" data-id="10"><span title="a">This is first</span></div>
+    <div class="demo" title="title2"><span>This is second</span></div>
+    <div class="demo" title="title3"><span>This is third</span></div>
+    <div class="demo" title="title4"><span>This is fourth</span></div> -->
+
+
+    <!-- set-get giá trị thuộc tính của Element -->
+    <lable id="lblText"></lable>
+    <br />
+    <input type="text" id="txt1" />
+    <br />
+    <br />
+    <button id="btn1">Click here 1</button>
+    <button id="btn2">Click here 2</button>
+    <button id="btn3">Click here 3</button>
+
+
+    <a href="#" id="link-click">Link</a>
+    <button id="hn-click-link">Click!</button>
+
+
+
+</body>
+
+</html>
