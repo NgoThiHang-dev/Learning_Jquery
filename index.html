@@ -16,11 +16,18 @@
 
     <script>
         $(document).ready(function () {
-            // $('<b>Color</b>').insertBefore('lable');
-            // $('<b>Beautiful</b>').insertAfter('lable');
-
-            $('lable').before('<b>Color: </b>');
-            $('lable').after('<b> Beati </b>');
+            $('#addClass').on('click', function () {
+                $('h1').addClass('color-red');
+            })
+            $('#removeClass').on('click', function () {
+                $('h1').removeClass('color-red');
+            })
+            $('#toggleClass').on('click', function () {
+                $('h1').toggleClass('color-red');
+            })
+            $('#addHasClass').on('click', function () {
+                alert($('h1').hasClass('color-red'))
+            })
         })
     </script>
 
@@ -29,11 +36,11 @@
 <body>
     <div class="wrapp-content">
         <div class="container-home">
-            <lable>While</lable>
-            <br />
-            <lable>Red</lable>
-            <br />
-            <lable>Blue</lable>
+            <h1>Css class</h1>
+            <button id="addClass">Add</button>
+            <button id="removeClass">Remove</button>
+            <button id="toggleClass">Toggle</button>
+            <button id="addHasClass">Has class</button>
         </div>
     </div>
 
