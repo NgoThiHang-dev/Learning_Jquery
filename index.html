@@ -15,34 +15,26 @@
     <script type="text/javascript" src="js/jquery-3.6.0.min.js"></script>
 
     <script>
-        // $(document).ready(function () {
-        //     $('#btnSubmit').on('click', function () {
-        //         var rdoChecked = $('input[type="radio"]:checked');
-        //         if (rdoChecked.length > 0) {
-        //             $('#divResult').text(rdoChecked.val() + " radio selected");
-        //         } else {
-        //             $('#divResult').text(" No radio selected");
-        //         }
-        //     })
-        // })
-
         $(document).ready(function () {
-            $('#btnSubmit').on('click', function () {
-                var cbChecked = $('input[type="checkbox"]:checked');
-                if (cbChecked.length > 0) {
-                    $('#divResult').text(cbChecked.length + " checbox checked");
-                    cbChecked.each(function () {
-                        $('#divResult').append("<br/>" + $(this).val());
+            $('#btnSubmit').click(function () {
+                var selected = $('#sltSkills option:selected');
+                if (selected.length > 0) {
+                    // chọn 1 option
+                    // $('#divResult').html('Value: ' + selected.val() + '. Text: ' + selected.text());
+
+                    //chọn multi options
+                    var result = '';
+                    selected.each(function () {
+                        result += 'Value: ' + $(this).val() + '. Text: ' + $(this).text() + "<br>";
                     })
+
+                    $('#divResult').html(result);
+
                 } else {
-                    $('#divResult').text(" no checbox checked");
+                    $('#divResult').html('No selected');
                 }
             })
         })
-
-
-
-
     </script>
 
 </head>
@@ -50,31 +42,12 @@
 <body>
     <div class="wrapp-content">
         <div class="container-home">
-            <!-- <div class="mb-3">
-                <input type="radio" name="gender" value="0" id="lblMale" />
-                <label for="lblMale" class="form-label">Male</label>
-            </div>
-            <div class="mb-3">
-                <input type="radio" name="gender" value="1" id="lblFemale" />
-                <label for="lblFemale" class="form-label">Female</label>
-            </div>
-            <button id="btnSubmit" type="submit">Submit</button>
-            <br />
-            <br /> -->
-
-
-            <div class="mb-3">
-                <input type="checkbox" id="cbJuery" value="Jquery" />
-                <label for="cbJuery" class="form-label">Jquery</label>
-            </div>
-            <div class="mb-3">
-                <input type="checkbox" id="cbPhp" value="PHP" />
-                <label for="cbPhp" class="form-label">PHP</label>
-            </div>
-            <div class="mb-3">
-                <input type="checkbox" id="cbHtml" value="HTML" />
-                <label for="cbHtml" class="form-label">HTML</label>
-            </div>
+            <select id="sltSkills" multiple>
+                <option value="C#">C#</option>
+                <option value="Java">Java</option>
+                <option value="PHP">PHP</option>
+                <option value="Laravel">Laravel</option>
+            </select>
             <button id="btnSubmit" type="submit">Submit</button>
             <br />
             <br />

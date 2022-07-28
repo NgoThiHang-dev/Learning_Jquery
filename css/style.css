@@ -16,3 +16,8 @@
     rgb(20 20 20 / 7%) 0 0.125rem 0.25rem -0.0625rem;
   backdrop-filter: blur(42px);
 }
+
+#btnSubmit {
+  border: none;
+  border-radius: 4px;
+}
