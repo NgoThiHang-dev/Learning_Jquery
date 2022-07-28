@@ -16,19 +16,11 @@
 
     <script>
         $(document).ready(function () {
-            $('#addClass').on('click', function () {
-                $('h1').addClass('color-red');
-            })
-            $('#removeClass').on('click', function () {
-                $('h1').removeClass('color-red');
-            })
-            $('#toggleClass').on('click', function () {
-                $('h1').toggleClass('color-red');
-            })
-            $('#addHasClass').on('click', function () {
-                alert($('h1').hasClass('color-red'))
-            })
-        })
+            alert($('li').map(function (index, element) {
+                if ($(element).text() != 'PHP')
+                    return $(element).text();
+            }).get().join(' | '));
+        });
     </script>
 
 </head>
@@ -36,11 +28,12 @@
 <body>
     <div class="wrapp-content">
         <div class="container-home">
-            <h1>Css class</h1>
-            <button id="addClass">Add</button>
-            <button id="removeClass">Remove</button>
-            <button id="toggleClass">Toggle</button>
-            <button id="addHasClass">Has class</button>
+            <ul>
+                <li>PHP</li>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JSON</li>
+            </ul>
         </div>
     </div>
 
