@@ -16,8 +16,11 @@
 
     <script>
         $(document).ready(function () {
-            $('p').prepend('<i>Color </i>');
-            $('p').append('<i> Cute</i>');
+            // $('<b>Color</b>').insertBefore('lable');
+            // $('<b>Beautiful</b>').insertAfter('lable');
+
+            $('lable').before('<b>Color: </b>');
+            $('lable').after('<b> Beati </b>');
         })
     </script>
 
@@ -26,9 +29,11 @@
 <body>
     <div class="wrapp-content">
         <div class="container-home">
-            <p>While</p>
-            <p>Red</p>
-            <p>Blue</p>
+            <lable>While</lable>
+            <br />
+            <lable>Red</lable>
+            <br />
+            <lable>Blue</lable>
         </div>
     </div>
 
