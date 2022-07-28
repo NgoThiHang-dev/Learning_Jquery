@@ -16,24 +16,24 @@
 
     <script>
         $(document).ready(function () {
-            $('#btnSubmit').click(function () {
-                var selected = $('#sltSkills option:selected');
-                if (selected.length > 0) {
-                    // chọn 1 option
-                    // $('#divResult').html('Value: ' + selected.val() + '. Text: ' + selected.text());
 
-                    //chọn multi options
-                    var result = '';
-                    selected.each(function () {
-                        result += 'Value: ' + $(this).val() + '. Text: ' + $(this).text() + "<br>";
-                    })
-
-                    $('#divResult').html(result);
-
-                } else {
-                    $('#divResult').html('No selected');
-                }
+            $('li').each(function () {
+                if ($(this).text() == 'England')
+                    $(this).css('color', 'red');
             })
+
+            // $('li').each(function (index, element) {
+            //     $('divResult').html($('#divResult').html() + "<br>" + $(this).text());
+            // })
+
+            // var result = '';
+            // $('li').each(function (index, element) {
+            //     result += $(this).text() + "<br>"
+            // })
+            // $('#divResult').html(result);
+
+            //method chaining
+            // $('li').css('color', 'while').slideUp(1000).slideDown(1000).attr('title', 'ok');
         })
     </script>
 
@@ -42,13 +42,13 @@
 <body>
     <div class="wrapp-content">
         <div class="container-home">
-            <select id="sltSkills" multiple>
-                <option value="C#">C#</option>
-                <option value="Java">Java</option>
-                <option value="PHP">PHP</option>
-                <option value="Laravel">Laravel</option>
-            </select>
-            <button id="btnSubmit" type="submit">Submit</button>
+            <ul>
+                <li>VietNam</li>
+                <li>ThaiLan</li>
+                <li>England</li>
+                <li>China</li>
+                <li>Russia</li>
+            </ul>
             <br />
             <br />
             <div id="divResult"></div>
